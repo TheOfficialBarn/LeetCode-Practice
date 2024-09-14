@@ -15,5 +15,18 @@ class Solution:
             prev = current
             if next1 != None:
                 current=next1
-            else: 
+            else:
                 return current
+            
+class Solution2(object):
+    def reverseList(self, head):
+        prev_node = None
+        current_node = head
+
+        while current_node is not None:
+            next_node = current_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+            current_node = next_node
+
+        return prev_node
